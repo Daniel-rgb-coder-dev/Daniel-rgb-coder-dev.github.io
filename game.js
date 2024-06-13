@@ -1,3 +1,12 @@
+ <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computer.html">Werking van de Computer</a></li>
+            <li><a href="binair.html">Binair Stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+            <li><a href="compressie.html">Compressietechnieken</a></li>
+             <li><a href="rekenmachine.html">Rekenmachine</a></li>
+            <li><a href="game.js">game</a></li>
+        </ul>
 const canvas = document.getElementById('gameCanvas');
 const context = canvas.getContext('2d');
 
