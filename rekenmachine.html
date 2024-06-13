@@ -8,17 +8,47 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            background: #444;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            text-align: center;
         }
         .calculator {
             background: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
         }
         .calculator-display {
             width: 100%;
@@ -32,51 +62,73 @@
             margin-bottom: 10px;
         }
         .calculator-buttons button {
-            width: 25%;
+            width: 23%;
             height: 50px;
             font-size: 18px;
-            margin: 5px 0;
+            margin: 5px 1%;
             cursor: pointer;
-        }
-        .calculator-buttons button.operation {
             background: #77a;
             color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .calculator-buttons button.operation {
+            background: #444;
         }
         .calculator-buttons button.equal {
             background: #333;
-            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <div id="display" class="calculator-display">0</div>
-        <div class="calculator-buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">DEL</button>
-            <button onclick="appendNumber('/')">/</button>
-            <button onclick="appendNumber('*')">*</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="appendNumber('-')">-</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="appendNumber('+')">+</button>
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button class="equal" onclick="calculate()">=</button>
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
+    <header>
+        <h1>Rekenmachine</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computer.html">Werking van de Computer</a></li>
+            <li><a href="binair.html">Binair Stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+            <li><a href="compressie.html">Compressietechnieken</a></li>
+            <li><a href="rekenmachine.html">Rekenmachine</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Eenvoudige Rekenmachine</h2>
+            <div class="calculator">
+                <div id="display" class="calculator-display">0</div>
+                <div class="calculator-buttons">
+                    <button onclick="clearDisplay()">C</button>
+                    <button onclick="deleteLast()">DEL</button>
+                    <button onclick="appendNumber('/')">/</button>
+                    <button onclick="appendNumber('*')">*</button>
+                    <button onclick="appendNumber('7')">7</button>
+                    <button onclick="appendNumber('8')">8</button>
+                    <button onclick="appendNumber('9')">9</button>
+                    <button onclick="appendNumber('-')">-</button>
+                    <button onclick="appendNumber('4')">4</button>
+                    <button onclick="appendNumber('5')">5</button>
+                    <button onclick="appendNumber('6')">6</button>
+                    <button onclick="appendNumber('+')">+</button>
+                    <button onclick="appendNumber('1')">1</button>
+                    <button onclick="appendNumber('2')">2</button>
+                    <button onclick="appendNumber('3')">3</button>
+                    <button class="equal" onclick="calculate()">=</button>
+                    <button onclick="appendNumber('0')">0</button>
+                    <button onclick="appendNumber('.')">.</button>
+                </div>
+            </div>
         </div>
     </div>
-
+    <footer>
+        <p>&copy; 2024 Daniel-rgb-coder-dev.github.io Alle rechten voorbehouden.</p>
+    </footer>
     <script>
         let display = document.getElementById('display');
         let currentInput = '';
-        
+
         function clearDisplay() {
             currentInput = '';
             display.innerText = '0';
@@ -88,7 +140,11 @@
         }
 
         function appendNumber(number) {
-            currentInput += number;
+            if (currentInput === '0' && number !== '.') {
+                currentInput = number;
+            } else {
+                currentInput += number;
+            }
             display.innerText = currentInput;
         }
 
@@ -101,11 +157,5 @@
             }
         }
     </script>
-    <ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="binairstelsel.html">binair stelsel</a></li>
-    <li><a href="kleurmodellen.html">kleurmoddelen</a></li>
-    <li><a href="rekenmachine.html"> rekenmachine</a></li>
-  </ul>
 </body>
 </html>
