@@ -1,21 +1,70 @@
 
-<!DOCTYPE html <!--dit is de homepage naar mijn site-->
-<html> <!--dit is het html-element-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Hallo en welkom op mijn website dit is een opdracht voor informatica en hier komen al mijn projecten op te staan.</title>
-  <link rel="stylesheet" type="text/css" href="opmaak.css">
-<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Persoonlijke Informatie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            background: #444;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-
-  <ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="binairstelsel.html">binair stelsel</a></li>
-    <li><a href="kleurmodellen.html">kleurmoddelen</a></li>
-    <li><a href="rekenmachine.html"> rekenmachine</a></li>
-  </ul>
-
-<img src="construction.jpg" alt="Deze site is nog niet af" style="width:700px;height:600px;">
-
+    <header>
+        <h1>Welkom op mijn website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computer.html">Werking van de Computer</a></li>
+            <li><a href="binair.html">Binair Stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+            <li><a href="compressie.html">Compressietechnieken</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Over Mij</h2>
+            <p>Hallo! Mijn naam is [Jouw Naam]. Ik ben een [jouw beroep] met een passie voor technologie en onderwijs. In mijn vrije tijd houd ik van [jouw hobby's]. Op deze website deel ik mijn kennis over verschillende onderwerpen zoals de werking van computers, het binaire stelsel, kleurmodellen, en compressietechnieken.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mijn Website. Alle rechten voorbehouden.</p>
+    </footer>
 </body>
 </html>
