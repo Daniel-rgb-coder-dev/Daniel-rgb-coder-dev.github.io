@@ -1,101 +1,103 @@
 <!DOCTYPE html>
-<html lang="nl">
-</head>
-    <link rel="stylesheet" type="text/css" href="opmaak.css">
-<body>
-      <br>
-    <ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="binairstelsel.html">binair stelsel</a></li>
-    <li><a href="kleurmodellen.html">kleurmoddelen</a></li>
-     <li><a href="rekenmachine.html"> rekenmachine</a></li>
-  </ul>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Eenvoudige Rekenmachine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekenmachine</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
             margin: 0;
         }
         .calculator {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .calculator input[type="text"] {
+        .calculator-display {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 18px;
+            height: 50px;
+            background: #222;
+            color: #fff;
             text-align: right;
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
-        .calculator button {
-            width: 23%;
-            padding: 15px;
-            margin: 1%;
-            border: none;
-            border-radius: 3px;
+        .calculator-buttons button {
+            width: 25%;
+            height: 50px;
             font-size: 18px;
+            margin: 5px 0;
             cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
         }
-        .calculator button.operation {
-            background-color: #f0ad4e;
+        .calculator-buttons button.operation {
+            background: #77a;
+            color: #fff;
         }
-        .calculator button.equals {
-            background-color: #d9534f;
-        }
-        .calculator button.clear {
-            background-color: #5bc0de;
+        .calculator-buttons button.equal {
+            background: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" readonly>
-        <button onclick="clearDisplay()" class="clear">C</button>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('+')" class="operation">+</button>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('-')" class="operation">-</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('*')" class="operation">*</button>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')" class="operation">.</button>
-        <button onclick="calculate()" class="equals">=</button>
-        <button onclick="appendToDisplay('/')" class="operation">/</button>
+        <div id="display" class="calculator-display">0</div>
+        <div class="calculator-buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="appendNumber('/')">/</button>
+            <button onclick="appendNumber('*')">*</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendNumber('-')">-</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendNumber('+')">+</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="equal" onclick="calculate()">=</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+        </div>
     </div>
+
     <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+        
         function clearDisplay() {
-            document.getElementById('display').value = '';
+            currentInput = '';
+            display.innerText = '0';
         }
 
-        function appendToDisplay(value) {
-            document.getElementById('display').value += value;
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1);
+            display.innerText = currentInput || '0';
+        }
+
+        function appendNumber(number) {
+            currentInput += number;
+            display.innerText = currentInput;
         }
 
         function calculate() {
-            const display = document.getElementById('display');
             try {
-                display.value = eval(display.value);
+                currentInput = eval(currentInput).toString();
+                display.innerText = currentInput;
             } catch (e) {
-                display.value = 'Error';
+                display.innerText = 'Error';
             }
         }
     </script>
