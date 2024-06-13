@@ -1,42 +1,75 @@
-<!DOCTYPE html> <!--dit is de homepage naar mijn site-->
-<html> <!--dit is het html-element-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> het eerste begin </title>
-<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleurmodellen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            background: #444;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-    <link rel="stylesheet" type="text/css" href="opmaak.css">
 <body>
-Kleurmodellen zijn manieren om kleuren te beschrijven en te organiseren, en ze worden gebruikt in allerlei toepassingen zoals schilderen, printen, en beeldschermen. Hier zijn de belangrijkste kleurmodellen die je misschien tegenkomt:
-
-RGB (Rood, Groen, Blauw):
-
-Wat is het?: RGB staat voor de kleuren rood, groen en blauw. Dit kleurmodel wordt vooral gebruikt bij schermen zoals televisies, computerschermen, en telefoons.
-Hoe werkt het?: Door verschillende hoeveelheden van deze drie kleuren te mengen, kunnen we bijna elke andere kleur maken. Bijvoorbeeld, als je rood en groen mengt, krijg je geel. Als je alle drie de kleuren maximaal mengt, krijg je wit.
-Voorbeeld: Stel je hebt een computerscherm. Dit scherm gebruikt kleine lampjes die rood, groen en blauw licht geven. Door deze lampjes in verschillende sterktes aan te zetten, kun je allerlei kleuren zien.
-CMYK (Cyaan, Magenta, Geel, Zwart):
-}
-Wat is het?: CMYK staat voor cyaan (een blauwachtige kleur), magenta (een roodachtige kleur), geel en zwart. Dit kleurmodel wordt gebruikt bij printen.
-Hoe werkt het?: In plaats van licht te mengen zoals bij RGB, meng je inkt. Cyaan, magenta en geel zijn de hoofdkleuren die je kunt mengen om andere kleuren te maken. Zwart (Key) wordt toegevoegd om donkere kleuren en zwart beter te kunnen printen.
-Voorbeeld: Als je een plaatje print, gebruikt de printer inkt in deze vier kleuren. Door de inkt in verschillende hoeveelheden te mengen, kan de printer allerlei kleuren op het papier maken.
-HSB/HSV (Kleurtoon, Verzadiging, Helderheid/Value):
-}
-Wat is het?: HSB/HSV is een manier om kleuren te beschrijven door te kijken naar de kleur zelf (kleurtoon), hoe intens de kleur is (verzadiging), en hoe licht of donker de kleur is (helderheid of value).
-Hoe werkt het?:
-Kleurtoon: Dit is de basiskleur, zoals rood, blauw of groen.
-Verzadiging: Dit geeft aan hoe "puur" de kleur is. Een volledig verzadigde kleur heeft geen grijs, terwijl een kleur met lage verzadiging meer grijs bevat en er dus "matter" uitziet.
-Helderheid/Value: Dit geeft aan hoe licht of donker de kleur is.
-Voorbeeld: Als je een tekenprogramma op de computer gebruikt, kun je vaak de HSB/HSV-instellingen aanpassen om precies de juiste kleur te krijgen voor je tekening.
-Kleurmodellen helpen ons te begrijpen hoe kleuren werken en hoe we ze kunnen maken of aanpassen voor verschillende toepassingen, of dat nu op een scherm is, op papier, of in digitale kunst.
-
-<br>    
-<ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="binairstelsel.html">binair stelsel</a></li>
-    <li><a href="kleurmodellen.html">kleurmoddelen</a></li>
-     <li><a href="rekenmachine.html"> rekenmachine</a></li>
-  </ul>
-
-    <img src="construction.jpg" alt="Deze site is nog niet af" style="width:700px;height:600px;">
-
-    <body>
+    <header>
+        <h1>Kleurmodellen</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computer.html">Werking van de Computer</a></li>
+            <li><a href="binair.html">Binair Stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+            <li><a href="compressie.html">Compressietechnieken</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>RGB en CMY-K Kleurmodellen</h2>
+            <h3>RGB</h3>
+            <p>Het RGB-kleurmodel (Rood, Groen, Blauw) wordt gebruikt in digitale schermen. Kleuren worden gevormd door verschillende intensiteiten van deze drie primaire kleuren te combineren.</p>
+            <h3>CMY-K</h3>
+            <p>Het CMY-K-kleurmodel (Cyaan, Magenta, Geel, Zwart) wordt gebruikt in kleurendruk. Dit model werkt door licht te absorberen in plaats van het uit te stralen.</p>
+            <h3>Pixels en Resolutie</h3>
+            <p>Pixels zijn de kleinste eenheden van een digitale afbeelding. Resolutie verwijst naar het aantal pixels in een afbeelding, meestal uitgedrukt als breedte x hoogte (bijvoorbeeld 1920x1080).</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mijn Website. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
 </html>
+
